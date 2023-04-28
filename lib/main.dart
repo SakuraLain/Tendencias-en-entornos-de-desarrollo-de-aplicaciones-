@@ -1,45 +1,45 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-// Uncomment lines 7 and 10 to view the visual layout at runtime.
-// import 'package:flutter/rendering.dart' show debugPaintSizeEnabled;
+import 'package:ucp_flutter_demo_app/routes.dart';
 
 void main() {
-  // debugPaintSizeEnabled = true;
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-
-    Color color = Theme
-        .of(context)
-        .primaryColor;
-    const primaryColor = Color(0xFF151026);
-
+    const primaryColor = {
+      50: Color.fromRGBO(236, 29, 36, .1),
+      100: Color.fromRGBO(236, 29, 36, .2),
+      200: Color.fromRGBO(236, 29, 36, .3),
+      300: Color.fromRGBO(236, 29, 36, .4),
+      400: Color.fromRGBO(236, 29, 36, .5),
+      500: Color.fromRGBO(236, 29, 36, .6),
+      600: Color.fromRGBO(236, 29, 36, .7),
+      700: Color.fromRGBO(236, 29, 36, .8),
+      800: Color.fromRGBO(236, 29, 36, .9),
+      900: Color.fromRGBO(236, 29, 36, 1),
+    };
 
     return MaterialApp(
-      title: 'Catálogo de películas',
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('Catálogo de películas'),
-            backgroundColor: primaryColor,
-          ),
-          body: new Stack(
-            children: [
-              new Container(
-                decoration: new BoxDecoration(
-                  image: new DecorationImage(
-                    image: new AssetImage("images/fondo.jpg"),
-                    fit: BoxFit.cover,),
-                ),
-              ),
-              new Center(
-                child: new Text(
-                    "Bienvenidos al catálogo más grande de películas"),
-              )
-            ],
-          )
+      debugShowCheckedModeBanner: false,
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
       ),
+      title: 'MARVEL API APP',
+      theme: ThemeData(
+        primarySwatch: const MaterialColor(0xffEC1D24, primaryColor),
+      ),
+      initialRoute: 'home',
+      onGenerateRoute: onGenerateRoute,
     );
   }
 }
