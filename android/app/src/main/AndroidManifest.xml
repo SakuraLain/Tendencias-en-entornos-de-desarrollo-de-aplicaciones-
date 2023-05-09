@@ -1,9 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ucp_flutter_demo_app">
-
-   <uses-permission android:name="android.permission.INTERNET" />
+    package="com.example.firebaseflutter">
    <application
-        android:label="ucp_flutter_demo_app"
+        android:label="firebaseflutter"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

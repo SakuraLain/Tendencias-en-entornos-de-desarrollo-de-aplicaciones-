@@ -1,4 +1,4 @@
-package com.example.ucp_flutter_demo_app
+package com.example.firebaseflutter
 
 import io.flutter.embedding.android.FlutterActivity
 
